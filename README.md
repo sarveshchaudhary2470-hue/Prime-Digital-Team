@@ -57,7 +57,7 @@ This project is configured for **Unified Deployment** (Frontend + Backend in one
 
 1. **Create a new "Web Service"** on Render.
 2. **Connect your GitHub Repository**.
-3. **Build Command**: `npm run build`
+3. **Build Command**: `npm run build-all`
 4. **Start Command**: `npm start`
 5. **Add Environment Variables**:
    - `MONGODB_URI`
