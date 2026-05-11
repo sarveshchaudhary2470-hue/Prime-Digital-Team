@@ -1,0 +1,9 @@
+# Backend ignore
+node_modules/
+.env
+*.json
+!package.json
+!package-lock.json
+public/uploads/
+logs/
+.DS_Store
