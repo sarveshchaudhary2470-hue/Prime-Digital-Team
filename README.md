@@ -51,5 +51,25 @@ A premium, full-stack digital agency website with a built-in custom CMS, secure 
 
 The `.env` file is included in `.gitignore` to prevent sensitive keys from being leaked. Never share your actual `.env` file publicly.
 
+## 🌐 Deployment (Render)
+
+This project is configured for **Unified Deployment** (Frontend + Backend in one service).
+
+1. **Create a new "Web Service"** on Render.
+2. **Connect your GitHub Repository**.
+3. **Build Command**: `npm run build`
+4. **Start Command**: `npm start`
+5. **Add Environment Variables**:
+   - `MONGODB_URI`
+   - `JWT_SECRET`
+   - `CLOUDINARY_CLOUD_NAME`
+   - `CLOUDINARY_API_KEY`
+   - `CLOUDINARY_API_SECRET`
+   - `EMAIL_USER`
+   - `EMAIL_PASS`
+   - `NODE_ENV`: `production`
+
+Render will automatically build your frontend and serve it through your Node.js backend.
+
 ---
 Built with ❤️ by Prime Digital Team

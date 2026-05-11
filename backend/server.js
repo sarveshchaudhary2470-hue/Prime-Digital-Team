@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const path = require('path');
 const cors = require('cors');
 const multer = require('multer');
 const cloudinary = require('cloudinary').v2;
@@ -353,6 +354,16 @@ app.delete('/api/messages/:id', async (req, res) => {
   }
 });
 
+// Serve static assets in production (Full-stack mode)
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../frontend', 'dist', 'index.html'));
+  });
+}
+
 app.listen(PORT, () => {
   console.log(`Backend server running on http://localhost:${PORT}`);
 });
+
