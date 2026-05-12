@@ -147,12 +147,11 @@ const HeroBlock = ({ content }) => {
       </div>
 
       <style>{`
-        @media (max-width: 992px) {
-          .hero-grid { grid-template-columns: 1fr !important; text-align: center; }
-          .hero-grid > div:first-child { alignItems: center !important; }
-          .hero-visual { height: 400px !important; margin-top: 3rem; }
-        }
+        /* Desktop Mode Forced: Removed media queries */
+        .hero-grid { grid-template-columns: 1fr 1fr !important; }
+        .hero-visual { height: 500px !important; }
       `}</style>
+
     </section>
   );
 };

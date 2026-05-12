@@ -174,11 +174,9 @@ const Contact = () => {
         .custom-input:focus {
           border-color: var(--accent-blue);
         }
-        @media (max-width: 768px) {
-          .glass { grid-template-columns: 1fr !important; }
-          .contact-info { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        }
+        /* Desktop Mode Forced: Removed media queries */
       `}</style>
+
     </motion.div>
   );
 };

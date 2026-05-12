@@ -117,13 +117,10 @@ const Navbar = () => {
       </AnimatePresence>
 
       <style>{`
-        @media (min-width: 769px) {
-          .mobile-toggle { display: none !important; }
-        }
-        @media (max-width: 768px) {
-          .desktop-menu { display: none !important; }
-        }
+        .mobile-toggle { display: none !important; }
+        .desktop-menu { display: flex !important; }
       `}</style>
+
     </motion.nav>
   );
 };
