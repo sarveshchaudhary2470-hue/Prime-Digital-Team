@@ -5,11 +5,11 @@ import MagneticButton from '../MagneticButton';
 const HeroBlock = ({ content }) => {
   return (
     <section style={{
-      minHeight: '100vh',
+      minHeight: '800px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      padding: '6rem 2rem',
+      padding: '4rem 2rem',
       position: 'relative',
       overflow: 'hidden'
     }}>
