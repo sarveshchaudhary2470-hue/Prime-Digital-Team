@@ -12,7 +12,7 @@ const Messages = () => {
 
   const fetchMessages = () => {
     setLoading(true);
-    fetch('http://localhost:5000/api/messages')
+    fetch('/api/messages')
       .then(res => res.json())
       .then(data => {
         setMessages(data.reverse()); // Newest first
@@ -27,7 +27,7 @@ const Messages = () => {
   const deleteMessage = (id) => {
     if (!window.confirm('Are you sure you want to delete this message?')) return;
     
-    fetch(`http://localhost:5000/api/messages/${id}`, { method: 'DELETE' })
+    fetch(`/api/messages/${id}`, { method: 'DELETE' })
       .then(res => res.json())
       .then(() => {
         setMessages(messages.filter(m => m.id !== id));

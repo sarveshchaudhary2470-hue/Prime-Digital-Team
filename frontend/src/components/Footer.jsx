@@ -11,7 +11,7 @@ const Footer = () => {
   });
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/content')
+    fetch('/api/content')
       .then(res => res.json())
       .then(data => {
         const footerBlock = data.find(b => b.type === 'footer');

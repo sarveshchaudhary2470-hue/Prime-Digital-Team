@@ -20,7 +20,7 @@ const DailyTracker = () => {
 
   const fetchDiary = () => {
     setLoading(true);
-    fetch('http://localhost:5000/api/diary')
+    fetch('/api/diary')
       .then(res => res.json())
       .then(data => {
         const todayData = data[currentDate];
@@ -46,7 +46,7 @@ const DailyTracker = () => {
       tasks: newTasks
     };
 
-    fetch('http://localhost:5000/api/diary/update', {
+    fetch('/api/diary/update', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ date: currentDate, data: dataToSave })

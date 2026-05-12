@@ -10,7 +10,7 @@ const Contact = () => {
   });
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/content')
+    fetch('/api/content')
       .then(res => res.json())
       .then(data => {
         const block = data.find(b => b.type === 'footer');
@@ -30,7 +30,7 @@ const Contact = () => {
       return;
     }
     setIsSubmitting(true);
-    fetch('http://localhost:5000/api/messages', {
+    fetch('/api/messages', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData)

@@ -17,7 +17,7 @@ const AdminManager = () => {
 
   const fetchAdmins = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/auth/admins', {
+      const res = await fetch('/api/auth/admins', {
         headers: { 'Authorization': token }
       });
       const data = await res.json();
@@ -33,7 +33,7 @@ const AdminManager = () => {
     e.preventDefault();
     setStatus({ type: 'info', msg: 'Creating admin...' });
     try {
-      const res = await fetch('http://localhost:5000/api/auth/register', {
+      const res = await fetch('/api/auth/register', {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ const AdminManager = () => {
   const handleDeleteAdmin = async (id) => {
     if (!window.confirm('Are you sure you want to remove this admin?')) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/auth/admins/${id}`, {
+      const res = await fetch(`/api/auth/admins/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': token }
       });

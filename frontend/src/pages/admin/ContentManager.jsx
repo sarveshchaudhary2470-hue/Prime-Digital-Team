@@ -30,7 +30,7 @@ const ContentManager = () => {
   }, []);
 
   const fetchData = () => {
-    fetch('http://localhost:5000/api/content')
+    fetch('/api/content')
       .then(res => res.json())
       .then(dbData => {
         setData(dbData);
@@ -65,7 +65,7 @@ const ContentManager = () => {
       return block;
     });
 
-    fetch('http://localhost:5000/api/content/update', {
+    fetch('/api/content/update', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedData)
@@ -86,7 +86,7 @@ const ContentManager = () => {
     const formData = new FormData();
     formData.append('image', file);
 
-    fetch('http://localhost:5000/api/upload', { method: 'POST', body: formData })
+    fetch('/api/upload', { method: 'POST', body: formData })
       .then(res => res.json())
       .then(data => {
         if (uploadingImageFor) {
@@ -234,7 +234,7 @@ const ContentManager = () => {
                         if (!uploadingImageFor || !uploadingImageFor.file) return;
                         const formData = new FormData();
                         formData.append('image', uploadingImageFor.file);
-                        fetch('http://localhost:5000/api/upload', { method: 'POST', body: formData })
+                        fetch('/api/upload', { method: 'POST', body: formData })
                           .then(res => res.json())
                           .then(data => {
                             setHeroContent({ ...heroContent, heroImage: data.url });

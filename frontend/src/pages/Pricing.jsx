@@ -6,7 +6,7 @@ const Pricing = () => {
   const [pricingContent, setPricingContent] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/content')
+    fetch('/api/content')
       .then(res => res.json())
       .then(data => {
         const block = data.find(b => b.type === 'pricing');

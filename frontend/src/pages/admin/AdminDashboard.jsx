@@ -19,7 +19,7 @@ const AdminDashboard = () => {
       let pendingT = [];
 
       try {
-        const contentRes = await fetch('http://localhost:5000/api/content');
+        const contentRes = await fetch('/api/content');
         const content = await contentRes.json();
         console.log('Content API response:', content);
         if (Array.isArray(content)) {
@@ -33,7 +33,7 @@ const AdminDashboard = () => {
       }
 
       try {
-        const clientsRes = await fetch('http://localhost:5000/api/clients');
+        const clientsRes = await fetch('/api/clients');
         const clients = await clientsRes.json();
         console.log('Clients API response:', clients);
         clientCount = Array.isArray(clients) ? clients.length : 0;
@@ -42,7 +42,7 @@ const AdminDashboard = () => {
       }
 
       try {
-        const diaryRes = await fetch('http://localhost:5000/api/diary');
+        const diaryRes = await fetch('/api/diary');
         const diary = await diaryRes.json();
         console.log('Diary API response:', diary);
         const todayDate = new Date().toISOString().split('T')[0];

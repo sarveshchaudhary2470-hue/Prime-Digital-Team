@@ -8,7 +8,7 @@ const Services = () => {
   const [servicesContent, setServicesContent] = React.useState(null);
 
   React.useEffect(() => {
-    fetch('http://localhost:5000/api/content')
+    fetch('/api/content')
       .then(res => res.json())
       .then(data => {
         const block = data.find(b => b.type === 'services');

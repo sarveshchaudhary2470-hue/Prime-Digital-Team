@@ -18,14 +18,14 @@ const ClientManager = () => {
   }, []);
 
   const fetchClients = () => {
-    fetch('http://localhost:5000/api/clients')
+    fetch('/api/clients')
       .then(res => res.json())
       .then(data => { setClients(data); setLoading(false); })
       .catch(err => { console.error("Error fetching clients", err); setLoading(false); });
   };
 
   const updateBackend = (updatedClients, successMessage) => {
-    fetch('http://localhost:5000/api/clients/update', {
+    fetch('/api/clients/update', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedClients)
